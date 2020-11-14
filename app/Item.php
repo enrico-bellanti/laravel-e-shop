@@ -11,6 +11,6 @@ class Item extends Model
     }
     
     public function categories() {
-        return $this->belongsToMany('App\Category'); 
+        return $this->belongsToMany('App\Category', 'item_category');
     }
 }

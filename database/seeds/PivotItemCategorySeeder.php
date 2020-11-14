@@ -20,10 +20,10 @@ class PivotItemCategorySeeder extends Seeder
             $rand = rand(1,3);
             for ($i=0; $i < $rand; $i++) { 
                 $category = Category::inRandomOrder()->first();
-                if (!in_array($category->name, $category->items->name)) {
-                    $category->items()->attach($item->id);
+                $category->items()->attach($item->id);
+                // if (!in_array($category->name, $category->items->name)) {
                     
-                }
+                // }
             };
         }
     }

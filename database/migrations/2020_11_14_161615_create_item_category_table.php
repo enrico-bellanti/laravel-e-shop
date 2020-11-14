@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateItemCategoriesTable extends Migration
+class CreateItemCategoryTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateItemCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('item_categories', function (Blueprint $table) {
-            $table->foreignId('item_id')->constrained();
+        Schema::create('item_category', function (Blueprint $table) {
             $table->foreignId('category_id')->constrained();
+            $table->foreignId('item_id')->constrained();
         });
     }
 
